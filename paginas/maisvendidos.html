@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mais Vendidos</title>
+    <link rel="icon" type="image/x-icon" href="/imagens/favicon_maisvendidos.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <link rel="stylesheet" href="/css/maisvendido.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html" class="link-item">Livraria Mais</a></h1>
+        <nav>
+            <a href="catalogo.html" class="link-item">Catálogo</a>
+            <a href="maisvendidos.html" class="link-item">Mais Vendidos</a>
+            <a href="recomendacoes.html" class="link-item">Recomendações</a>
+            <a href="sobrenos.html" class="link-item">Sobre Nós</a>
+            <a href="contato.html" class="link-item">Contato</a>
+        </nav>
+        <button class="nav-button" aria-label="Ver o carrinho de compras" onclick="window.open('carrinho.html', '_blank')">Carrinho de compras</button>
+    </header>
+
+    <div class="localgrafico1">
+        <h2>Livros Mais Vendidos</h2>
+        <div class="grafico_container">
+            <canvas id="grafico-barras" style="max-height: 400px;"></canvas>
+        </div>
+    </div>
+
+    <div class="localgrafico2">
+        <div class="separador">
+            <h2>Gêneros mais pedidos</h2>
+        </div>
+        <div class="grafico_container">
+            <canvas id="grafico-pizza" style="max-height: 400px;"></canvas>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Livraria Mais. Todos os direitos reservados.</p>
+        <p>Política de Privacidade | Termos de Serviço</p>
+    </footer>
+
+    <script>
+        var graficobarras = document.getElementById("grafico-barras").getContext("2d");
+    
+        var grafico1 = new Chart(graficobarras, {
+            type: 'bar',
+            data: {
+                labels: ['Duna', 'Orgulho e Preconceito', 'O senhor dos Anéis: A Sociedade do Anel', 'O Ilumiado', 'Garota exemplar', 'Eu Sei Por Que o Pássaro Canta na Gaiola', 'Sapiens: Uma Breve História da Humanidade', 'Assassinato no Expresso do Oriente', '1984', 'O Poder do Hábito', 'O Mundo de Sofia', 'Dom Casmurro'],
+                datasets: [{
+                    label: 'Vendas',
+                    data: [560000, 317000, 824000, 632000, 329000, 235000, 189000, 751000, 332000, 114000, 135000, 370000],
+                    backgroundColor: [
+                        'rgba(69, 16, 3, 1)',
+                        'rgba(119, 45, 10, 1)',
+                        'rgba(183, 92, 21, 1)',
+                        'rgba(119, 45, 10, 1)',
+                        'rgba(255, 138, 28, 1)',
+                        'rgba(247, 156, 28, 1)',
+                        'rgba(56, 56, 56, 1)',
+                        'rgba(239, 95, 12, 1)',
+                        'rgba(255, 102, 51, 1)',
+                        'rgba(31, 8, 3, 1)',
+                        'rgba(180, 95, 42, 1)',
+                        'rgba(118, 54, 13, 1)'
+                    ],
+                    borderColor: [
+                        'rgba(69, 16, 3, 1)',
+                        'rgba(119, 45, 10, 1)',
+                        'rgba(183, 92, 21, 1)',
+                        'rgba(119, 45, 10, 1)',
+                        'rgba(255, 138, 28, 1)',
+                        'rgba(247, 156, 28, 1)',
+                        'rgba(56, 56, 56, 1)',
+                        'rgba(239, 95, 12, 1)',
+                        'rgba(255, 102, 51, 1)',
+                        'rgba(31, 8, 3, 1)',
+                        'rgba(180, 95, 42, 1)',
+                        'rgba(118, 54, 13, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                    duration: 1000,
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    
+        var graficopizza = document.getElementById("grafico-pizza").getContext("2d");
+        var grafico2 = new Chart(graficopizza, {
+            type: 'pie',
+            data: {
+                labels: ['Ficção Científica', 'Romance', 'Fantasia', 'Terror', 'Mistério', 'Autobiografia', 'História', 'Ficção Policial', 'Ficção Distópica', 'Autoajuda', 'Filosofia', 'Literatura Brasileira'],
+                datasets: [{
+                    label: 'Vendas',
+                    data: [560000, 317000, 824000, 632000, 329000, 235000, 189000, 751000, 332000, 114000, 135000, 370000],
+                    backgroundColor: [
+                        'rgba(69, 16, 3, 1)',
+                        'rgba(119, 45, 10, 1)',
+                        'rgba(183, 92, 21, 1)',
+                        'rgba(119, 45, 10, 1)',
+                        'rgba(255, 138, 28, 1)',
+                        'rgba(247, 156, 28, 1)',
+                        'rgba(56, 56, 56, 1)',
+                        'rgba(239, 95, 12, 1)',
+                        'rgba(255, 102, 51, 1)',
+                        'rgba(31, 8, 3, 1)',
+                        'rgba(180, 95, 42, 1)',
+                        'rgba(118, 54, 13, 1)'
+
+                    ],
+                }]
+            },
+        });
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato conosco!">
+    <title>Fale conosco</title>
+    <link rel="stylesheet" href="/css/contato.css">
+    <link rel="icon" type="image/x-icon" href="/imagens/favicon_contato.png">
+
+</head>
+
+<body>
+    <header>
+        <h1><a href="index.html" class="link-item">Livraria Mais</a></h1>
+        <nav>
+            <a href="catalogo.html" class="link-item">Catálogo</a>
+            <a href="maisvendidos.html" class="link-item">Mais Vendidos</a>
+            <a href="recomendacoes.html" class="link-item">Recomendações</a>
+            <a href="sobrenos.html" class="link-item">Sobre Nós</a>
+            <a href="contato.html" class="link-item">Contato</a>
+        </nav>
+        <button class="nav-button" aria-label="Ver o carrinho de compras" onclick="window.open('carrinho.html', '_blank')">Carrinho de compras</button>
+    </header>
+
+    <main>
+        <h2>Entre em Contato</h2>
+        <p>Estamos aqui para ouvir suas sugestões, dúvidas ou feedback sobre nossos serviços. Você pode nos enviar:</p>
+        <ul>
+            <li>Sugestões de livros que gostaria de ver em nosso catálogo</li>
+            <li>Comentários sobre sua experiência de compra</li>
+            <li>Dúvidas sobre pedidos ou disponibilidade de produtos</li>
+        </ul>
+        <form id="FormContato">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Livraria Mais. Todos os direitos reservados.</p>
+        <p>Política de Privacidade | Termos de Serviço</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('FormContato');
+
+        form.onsubmit = function () {
+            alert('Formulário enviado!');
+            form.reset();
+        };
+    </script>
+    
+    
+</body>
+
+</html>

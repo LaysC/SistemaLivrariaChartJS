@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total do pedido</title>
+    <link rel="stylesheet" href="/css/confirmacao.css"></head>
+    <link rel="icon" type="image/x-icon" href="/imagens/favicon_confirmacao.png">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Seu pedido está pronto!</h1>
+        <div id="resultado">
+            <h2>Total a pagar: R$ <span id="total">0,00</span></h2>
+            <p>Compra finalizada - Aguarde o código de rastreio em seu e-mail cadastrado.</p>
+            <p>Enquanto isso, desfrute de nosso site mais um pouco.</p>
+        </div>
+        <button><a href="index.html" style="color: white; text-decoration: none;">Página Principal</a></button>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+const total = params.get('Total');
+
+if (total) {
+    document.getElementById('total').textContent = `R$ ${total}`;
+} else {
+    document.getElementById('total').textContent = "R$ 0,00";
+}
+
+    </script>
+</body>
+</html>

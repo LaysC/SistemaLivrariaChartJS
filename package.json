@@ -1,0 +1,15 @@
+{
+  "name": "mini-projeto-livraria",
+  "version": "1.0.0",
+  "description": "Um pequeno projeto de uma livraria online utilizando javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^4.4.4"
+  }
+}

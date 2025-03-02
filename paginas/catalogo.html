@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+    <link rel="stylesheet" href="/css/catalogo.css">
+    <link rel="icon" type="image/x-icon" href="/imagens/favicon_catalogo.png">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html" class="link-item">Livraria Mais</a></h1>
+        <nav>
+            <a href="catalogo.html" class="link-item">Catálogo</a>
+            <a href="maisvendidos.html" class="link-item">Mais Vendidos</a>
+            <a href="recomendacoes.html" class="link-item">Recomendações</a>
+            <a href="sobrenos.html" class="link-item">Sobre Nós</a>
+            <a href="contato.html" class="link-item">Contato</a>
+        </nav>
+        <button class="nav-button" aria-label="Ver o carrinho de compras" onclick="window.open('carrinho.html', '_blank')">Carrinho de compras</button>
+    </header>
+
+    <div class="container">
+        <div class="livro">
+            <div class="imagem"><img src="/imagens/duna.jpg" alt=""></div>
+            <div class="desc">
+                <h1 id="titulo1"></h1>
+                <h2 id="autor1"></h2>
+                <h2 id="preco1"></h2>
+                <h2 id="genero1"></h2>
+            </div>
+        </div>
+
+        <div class="livro">
+            <div class="imagem"><img src="/imagens/orgulho.jpg" alt=""></div>
+            <div class="desc">
+                <h1 id="titulo2"></h1>
+                <h2 id="autor2"></h2>
+                <h2 id="preco2"></h2>
+                <h2 id="genero2"></h2>
+            </div>
+        </div>
+
+        <div class="livro">
+            <div class="imagem"><img src="/imagens/senhordosaneis.jpg" alt=""></div>
+            <div class="desc">
+                <h1 id="titulo3"></h1>
+                <h2 id="autor3"></h2>
+                <h2 id="preco3"></h2>
+                <h2 id="genero3"></h2>
+            </div>
+        </div>
+
+        <div class="livro">
+            <div class="imagem"><img src="/imagens/iluminado.jpg" alt=""></div>
+            <div class="desc">
+                <h1 id="titulo4"></h1>
+                <h2 id="autor4"></h2>
+                <h2 id="preco4"></h2>
+                <h2 id="genero4"></h2>
+            </div>
+        </div>
+
+        <div class="livro">
+            <div class="imagem"><img src="/imagens/garota.jpg" alt=""></div>
+            <div class="desc">
+                <h1 id="titulo5"></h1>
+                <h2 id="autor5"></h2>
+                <h2 id="preco5"></h2>
+                <h2 id="genero5"></h2>
+            </div>
+        </div>
+
+        <div class="livro">
+            <div class="imagem"><img src="/imagens/passaro.jpg" alt=""></div>
+            <div class="desc">
+                <h1 id="titulo6"></h1>
+                <h2 id="autor6"></h2>
+                <h2 id="preco6"></h2>
+                <h2 id="genero6"></h2>
+            </div>
+        </div>
+
+        <div class="livro">
+            <div class="imagem"><img src="/imagens/sapiens.jpg" alt=""></div>
+            <div class="desc">
+                <h1 id="titulo7"></h1>
+                <h2 id="autor7"></h2>
+                <h2 id="preco7"></h2>
+                <h2 id="genero7"></h2>
+            </div>
+        </div>
+
+        <div class="livro">
+            <div class="imagem"><img src="/imagens/expresso.jpg" alt=""></div>
+            <div class="desc">
+                <h1 id="titulo8"></h1>
+                <h2 id="autor8"></h2>
+                <h2 id="preco8"></h2>
+                <h2 id="genero8"></h2>
+            </div>
+        </div>
+
+        <div class="livro">
+            <div class="imagem"><img src="/imagens/1984.jpg" alt=""></div>
+            <div class="desc">
+                <h1 id="titulo9"></h1>
+                <h2 id="autor9"></h2>
+                <h2 id="preco9"></h2>
+                <h2 id="genero9"></h2>
+            </div>
+        </div>
+
+        <div class="livro">
+            <div class="imagem"><img src="/imagens/habito.jpg" alt=""></div>
+            <div class="desc">
+                <h1 id="titulo10"></h1>
+                <h2 id="autor10"></h2>
+                <h2 id="preco10"></h2>
+                <h2 id="genero10"></h2>
+            </div>
+        </div>
+
+        <div class="livro">
+            <div class="imagem"><img src="/imagens/sofia.jpg" alt=""></div>
+            <div class="desc">
+                <h1 id="titulo11"></h1>
+                <h2 id="autor11"></h2>
+                <h2 id="preco11"></h2>
+                <h2 id="genero11"></h2>
+            </div>
+        </div>
+
+        <div class="livro">
+            <div class="imagem"><img src="/imagens/domcasmurro.jpg" alt=""></div>
+            <div class="desc">
+                <h1 id="titulo12"></h1>
+                <h2 id="autor12"></h2>
+                <h2 id="preco12"></h2>
+                <h2 id="genero12"></h2>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Livraria Mais. Todos os direitos reservados.</p>
+        <p><a href="termos.html">Termos de Uso</a> | <a href="privacidade.html">Política de Privacidade</a></p>
+    </footer>
+
+    <script>
+        const livros = [
+            {
+                titulo: "Duna",
+                autor: "Frank Herbert",
+                preco: "R$ 49,90",
+                genero: "Ficção Científica",
+                imagem: "/imagens/duna.jpg"
+            },
+            {
+                titulo: "Orgulho e Preconceito",
+                autor: "Jane Austen",
+                preco: "R$ 39,90",
+                genero: "Romance",
+                imagem: "/imagens/orgulho.jpg"
+            },
+            {
+                titulo: "O Senhor dos Anéis",
+                autor: "J.R.R. Tolkien",
+                preco: "R$ 99,90",
+                genero: "Fantasia",
+                imagem: "/imagens/senhordosaneis.jpg"
+            },
+            {
+                titulo: "O Iluminado",
+                autor: "Stephen King",
+                preco: "R$ 59,90",
+                genero: "Terror",
+                imagem: "/imagens/iluminado.jpg"
+            },
+            {
+                titulo: "A Garota no Trem",
+                autor: "Paula Hawkins",
+                preco: "R$ 44,90",
+                genero: "Suspense",
+                imagem: "/imagens/garota.jpg"
+            },
+            {
+                titulo: "O Pássaro",
+                autor: "Fernando Sabino",
+                preco: "R$ 35,90",
+                genero: "Conto",
+                imagem: "/imagens/passaro.jpg"
+            },
+            {
+                titulo: "Sapiens: Uma Breve História da Humanidade",
+                autor: "Yuval Noah Harari",
+                preco: "R$ 69,90",
+                genero: "História",
+                imagem: "/imagens/sapiens.jpg"
+            },
+            {
+                titulo: "A Máquina do Tempo",
+                autor: "H.G. Wells",
+                preco: "R$ 29,90",
+                genero: "Ficção Científica",
+                imagem: "/imagens/expresso.jpg"
+            },
+            {
+                titulo: "1984",
+                autor: "George Orwell",
+                preco: "R$ 34,90",
+                genero: "Distopia",
+                imagem: "/imagens/1984.jpg"
+            },
+            {
+                titulo: "O Poder do Hábito",
+                autor: "Charles Duhigg",
+                preco: "R$ 54,90",
+                genero: "Autoajuda",
+                imagem: "/imagens/habito.jpg"
+            },
+            {
+                titulo: "Sofia, a Menina da Lâmpada",
+                autor: "Jostein Gaarder",
+                preco: "R$ 39,90",
+                genero: "Ficção",
+                imagem: "/imagens/sofia.jpg"
+            },
+            {
+                titulo: "Dom Casmurro",
+                autor: "Machado de Assis",
+                preco: "R$ 29,90",
+                genero: "Romance",
+                imagem: "/imagens/domcasmurro.jpg"
+            },
+        ];
+
+        livros.forEach((livro, index) => {
+            document.getElementById(`titulo${index + 1}`).textContent = livro.titulo;
+            document.getElementById(`autor${index + 1}`).textContent = livro.autor;
+            document.getElementById(`preco${index + 1}`).textContent = livro.preco;
+            document.getElementById(`genero${index + 1}`).textContent = livro.genero;
+        });
+    </script>
+</body>
+</html>

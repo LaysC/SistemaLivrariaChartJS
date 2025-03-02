@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferências Literárias</title>
+    <link rel="stylesheet" href="/css/recomendacoes.css">
+    <link rel="icon" type="image/x-icon" href="/imagens/favicon_maisvendidos.png">
+
+</head>
+<body>
+    <header>
+        <h1><a href="index.html" class="link-item">Livraria Mais</a></h1>
+        <nav>
+            <a href="catalogo.html" class="link-item">Catálogo</a>
+            <a href="maisvendidos.html" class="link-item">Mais Vendidos</a>
+            <a href="recomendacoes.html" class="link-item">Recomendações</a>
+            <a href="sobrenos.html" class="link-item">Sobre Nós</a>
+            <a href="contato.html" class="link-item">Contato</a>
+        </nav>
+        <button class="nav-button" aria-label="Ver o carrinho de compras" onclick="window.open('carrinho.html', '_blank')">Carrinho de compras</button>
+    </header>
+
+    <div class="container_rec">
+        <h1>Bem-vindo à Biblioteca Online</h1>
+        <h2>Quais são seus gêneros literários favoritos?</h2>
+        <form id="form_preferencias">
+            <label><input type="checkbox" name="generos" value="Ficção Científica"> Ficção Científica</label><br>
+            <label><input type="checkbox" name="generos" value="Romance"> Romance</label><br>
+            <label><input type="checkbox" name="generos" value="Fantasia"> Fantasia</label><br>
+            <label><input type="checkbox" name="generos" value="Terror"> Terror</label><br>
+            <label><input type="checkbox" name="generos" value="Mistério"> Mistério</label><br>
+            <label><input type="checkbox" name="generos" value="Autobiografia"> Autobiografia</label><br>
+            <label><input type="checkbox" name="generos" value="História"> História</label><br>
+            <label><input type="checkbox" name="generos" value="Ficção Policial"> Ficção Policial</label><br>
+            <label><input type="checkbox" name="generos" value="Ficção Distópica"> Ficção Distópica</label><br>
+            <label><input type="checkbox" name="generos" value="Autoajuda"> Autoajuda</label><br>
+            <label><input type="checkbox" name="generos" value="Filosofia"> Filosofia</label><br>
+            <label><input type="checkbox" name="generos" value="Literatura Brasileira"> Literatura Brasileira</label><br>
+            <button type="submit">Ver Recomendações</button>
+        </form>
+        <div id="recomendacoes_livro" style="display: none;">
+            <h2>Recomendações de Livros</h2>
+            <div id="recomendacoes"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Livraria Mais. Todos os direitos reservados.</p>
+        <p>Política de Privacidade | Termos de Serviço</p>
+    </footer>
+
+    <script>
+        const livros = {
+            livro1: { titulo: "Duna", autor: "Frank Herbert", preco: "R$ 65,00", genero: "Ficção Científica", imagem: "/imagens/duna.jpg" },
+            livro2: { titulo: "Orgulho e Preconceito", autor: "Jane Austen", preco: "R$ 30,00", genero: "Romance", imagem: "/imagens/orgulho.jpg" },
+            livro3: { titulo: "O Senhor das Anéis: A Sociedade do Anel", autor: "J.R.R. Tolkien", preco: "R$ 50,00", genero: "Fantasia", imagem: "/imagens/senhordosaneis.jpg" },
+            livro4: { titulo: "O Iluminado", autor: "Stephen King", preco: "R$ 45,00", genero: "Terror", imagem: "/imagens/iluminado.jpg" },
+            livro5: { titulo: "Garota Exemplar", autor: "Gillian Flynn", preco: "R$ 35,00", genero: "Mistério", imagem: "/imagens/garota.jpg" },
+            livro6: { titulo: "Eu Sei Por Que o Pássaro Canta na Gaiola", autor: "Maya Angelou", preco: "R$ 46,00", genero: "Autobiografia", imagem: "/imagens/passaro.jpg" },
+            livro7: { titulo: "Sapiens: Uma Breve História da Humanidade", autor: "Yuval Noah Harari", preco: "R$ 50,00", genero: "História", imagem: "/imagens/sapiens.jpg" },
+            livro8: { titulo: "Assassinato no Expresso do Oriente", autor: "Agatha Christie", preco: "R$ 30,00", genero: "Ficção Policial", imagem: "/imagens/expresso.jpg" },
+            livro9: { titulo: "1984", autor: "George Orwell", preco: "R$ 35,00", genero: "Ficção Distópica", imagem: "/imagens/1984.jpg" },
+            livro10: { titulo: "O Poder do Hábito", autor: "Charles Duhigg", preco: "R$ 40,00", genero: "Autoajuda", imagem: "/imagens/habito.jpg" },
+            livro11: { titulo: "O Mundo de Sofia", autor: "Jostein Gaarder", preco: "R$ 50,00", genero: "Filosofia", imagem: "/imagens/sofia.jpg" },
+            livro12: { titulo: "Dom Casmurro", autor: "Machado de Assis", preco: "R$ 20,00", genero: "Literatura Brasileira", imagem: "/imagens/domcasmurro.jpg" }
+        };
+
+        document.getElementById('form_preferencias').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const genero_selecionado = Array.from(document.querySelectorAll('input[name="generos"]:checked')).map(checkbox => checkbox.value);
+
+            const div_recomendacoes = document.getElementById('recomendacoes');
+            div_recomendacoes.innerHTML = '';
+
+            genero_selecionado.forEach(genero => {
+                for (const key in livros) {
+                    if (livros[key].genero === genero) {
+                        const elemento_livro = document.createElement('div');
+                        elemento_livro.className = 'livro_rec';
+
+                        const img_elemento = document.createElement('img');
+                        img_elemento.src = livros[key].imagem;
+
+                        const info_elemento = document.createElement('div');
+                        const titulo_elemento = document.createElement('h3');
+                        titulo_elemento.textContent = livros[key].titulo; 
+                        const autor_elemento = document.createElement('p');
+                        autor_elemento.textContent = `${livros[key].autor} (${livros[key].preco})`;
+
+                        info_elemento.appendChild(titulo_elemento); 
+                        info_elemento.appendChild(autor_elemento); 
+
+                        elemento_livro.appendChild(img_elemento);
+                        elemento_livro.appendChild(info_elemento);
+                        div_recomendacoes.appendChild(elemento_livro);
+                    }
+                }
+            });
+
+            if (genero_selecionado.length > 0) {
+                document.getElementById('recomendacoes_livro').style.display = 'block';
+            } else {
+                alert('Por favor, selecione pelo menos um gênero.');
+            }
+        });
+    </script>
+
+</body>
+</html>

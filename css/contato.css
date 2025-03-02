@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #451003;
+    color: white;
+    padding: 20px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-right: 20px;
+}
+
+nav {
+    display: flex;
+}
+
+.link-item {
+    color: white;
+    text-decoration: none;
+    margin-right: 50px;
+    transition: color 0.3s;
+}
+
+.link-item:hover {
+    color: #dddddd49;
+}
+
+.nav-button {
+    background-color: #fff;
+    color: #451003;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #772d0a;
+    color: white;
+}
+
+main {
+    flex: 1;
+    padding: 40px 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 1300px;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 2em;
+    color: #451003;
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 10px 0;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #451003;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #451003;
+    outline: none;
+    box-shadow: 0 0 5px rgba(69, 16, 3, 0.3);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+input[type="submit"] {
+    background-color: #451003;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.1em;
+}
+
+input[type="submit"]:hover {
+    background-color: #772d0a;
+}
+
+footer {
+    background-color: #451003;
+    color: white;
+    text-align: center;
+    padding: 0;
+    height: 80px;
+    line-height: 80px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ddd;
+}

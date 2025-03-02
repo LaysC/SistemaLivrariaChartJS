@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="/css/carrinho.css">
+    <link rel="icon" type="image/x-icon" href="/imagens/favicon_carrinho.png">
+</head>
+<body>
+    <header>
+        <h1>Livraria Mais</h1>
+        <button class="nav-button" onclick="confirmacao()">Voltar</button>
+    </header>
+
+    <div class="container">
+        <div class="livros">
+            <div class="livro" id="livro1">
+                <div class="imagem"><img src="/imagens/duna.jpg" alt="Duna"></div>
+                <div class="desc">
+                    <h1>Duna</h1>
+                    <h2>Frank Herbert</h2>
+                    <h2>R$ 49,90</h2>
+                    <button onclick="adicionarAoCarrinho('Duna', 'Frank Herbert', 'R$ 49,90', '/imagens/duna.jpg')">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+
+            <div class="livro" id="livro2">
+                <div class="imagem"><img src="/imagens/orgulho.jpg" alt="Orgulho e Preconceito"></div>
+                <div class="desc">
+                    <h1>Orgulho e Preconceito</h1>
+                    <h2>Jane Austen</h2>
+                    <h2>R$ 39,90</h2>
+                    <button onclick="adicionarAoCarrinho('Orgulho e Preconceito', 'Jane Austen', 'R$ 39,90', '/imagens/orgulho.jpg')">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+
+            <div class="livro" id="livro3">
+                <div class="imagem"><img src="/imagens/senhordosaneis.jpg" alt="O Senhor dos Anéis"></div>
+                <div class="desc">
+                    <h1>O Senhor dos Anéis</h1>
+                    <h2>J.R.R. Tolkien</h2>
+                    <h2>R$ 99,90</h2>
+                    <button onclick="adicionarAoCarrinho('O Senhor dos Anéis', 'J.R.R. Tolkien', 'R$ 99,90', '/imagens/senhordosaneis.jpg')">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+
+            <div class="livro" id="livro4">
+                <div class="imagem"><img src="/imagens/iluminado.jpg" alt="O Iluminado"></div>
+                <div class="desc">
+                    <h1>O Iluminado</h1>
+                    <h2>Stephen King</h2>
+                    <h2>R$ 59,90</h2>
+                    <button onclick="adicionarAoCarrinho('O Iluminado', 'Stephen King', 'R$ 59,90', '/imagens/iluminado.jpg')">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+
+            <div class="livro" id="livro5">
+                <div class="imagem"><img src="/imagens/garota.jpg" alt="A Garota no Trem"></div>
+                <div class="desc">
+                    <h1>A Garota no Trem</h1>
+                    <h2>Paula Hawkins</h2>
+                    <h2>R$ 44,90</h2>
+                    <button onclick="adicionarAoCarrinho('A Garota no Trem', 'Paula Hawkins', 'R$ 44,90', '/imagens/garota.jpg')">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+
+            <div class="livro" id="livro6">
+                <div class="imagem"><img src="/imagens/passaro.jpg" alt="O Pássaro"></div>
+                <div class="desc">
+                    <h1>O Pássaro</h1>
+                    <h2>Fernando Sabino</h2>
+                    <h2>R$ 35,90</h2>
+                    <button onclick="adicionarAoCarrinho('O Pássaro', 'Fernando Sabino', 'R$ 35,90', '/imagens/1984.jpg')">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+
+            <div class="livro" id="livro7">
+                <div class="imagem"><img src="/imagens/sapiens.jpg" alt="Sapiens: Uma Breve História da Humanidade"></div>
+                <div class="desc">
+                    <h1>Sapiens: Uma Breve História da Humanidade</h1>
+                    <h2>Yuval Noah Harari</h2>
+                    <h2>R$ 69,90</h2>
+                    <button onclick="adicionarAoCarrinho('Sapiens: Uma Breve História da Humanidade', 'Yuval Noah Harari', 'R$ 69,90', '/imagens/sa.jpg')">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+
+            <div class="livro" id="livro8">
+                <div class="imagem"><img src="/imagens/expresso.jpg" alt="A Máquina do Tempo"></div>
+                <div class="desc">
+                    <h1>A Máquina do Tempo</h1>
+                    <h2>H.G. Wells</h2>
+                    <h2>R$ 29,90</h2>
+                    <button onclick="adicionarAoCarrinho('A Máquina do Tempo', 'H.G. Wells', 'R$ 29,90', '/imagens/harrypotter.jpg')">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+
+            <div class="livro" id="livro9">
+                <div class="imagem"><img src="/imagens/1984.jpg" alt="1984"></div>
+                <div class="desc">
+                    <h1>1984</h1>
+                    <h2>George Orwell</h2>
+                    <h2>R$ 34,90</h2>
+                    <button onclick="adicionarAoCarrinho('1984', 'George Orwell', 'R$ 34,90', '/imagens/1984.jpg')">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+
+            <div class="livro" id="livro10">
+                <div class="imagem"><img src="/imagens/habito.jpg" alt="O Poder do Hábito"></div>
+                <div class="desc">
+                    <h1>O Poder do Hábito</h1>
+                    <h2>Charles Duhigg</h2>
+                    <h2>R$ 54,90</h2>
+                    <button onclick="adicionarAoCarrinho('O Poder do Hábito', 'Charles Duhigg', 'R$ 54,90', '/imagens/habito.jpg')">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+
+            <div class="livro" id="livro11">
+                <div class="imagem"><img src="/imagens/sofia.jpg" alt="Sofia, a Menina da Lâmpada"></div>
+                <div class="desc">
+                    <h1>Sofia, a Menina da Lâmpada</h1>
+                    <h2>Jostein Gaarder</h2>
+                    <h2>R$ 39,90</h2>
+                    <button onclick="adicionarAoCarrinho('Sofia, a Menina da Lâmpada', 'Jostein Gaarder', 'R$ 39,90', '/imagens/sofia.jpg')">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+
+            <div class="livro" id="livro12">
+                <div class="imagem"><img src="/imagens/domcasmurro.jpg" alt="Dom Casmurro"></div>
+                <div class="desc">
+                    <h1>Dom Casmurro</h1>
+                    <h2>Machado de Assis</h2>
+                    <h2>R$ 29,90</h2>
+                    <button onclick="adicionarAoCarrinho('Dom Casmurro', 'Machado de Assis', 'R$ 29,90', '/imagens/domcasmurro.jpg')">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="carrinho-container">
+            <h1>Carrinho</h1>
+            <div id="carrinho-items"></div>
+            <div id="total-preco">Total: R$ 0,00</div>
+            <div style="display: flex; justify-content: space-between;">
+                <button onclick="limparCarrinhoComAlerta()">Limpar Carrinho</button>
+                <button onclick="finalizarCompra()">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Livraria Mais. Todos os direitos reservados.</p>
+        <p>Política de Privacidade | Termos de Serviço</p>
+    </footer>
+    <script>
+        let carrinho = [];
+        
+        function confirmacao() {
+            if (carrinho.length > 0) {
+                if (confirm("Você realmente deseja voltar? Você perderá todos os seus itens.")) {
+                    limparCarrinho(); 
+                    window.location.href = 'index.html';
+                }
+            } else {
+                if (confirm("Você realmente deseja voltar?")) {
+                    window.location.href = 'index.html';
+                }
+            }
+        }
+    
+        function adicionarAoCarrinho(titulo, autor, preco, imagem) {
+            const itemExistente = carrinho.find(item => item.titulo === titulo);
+            if (itemExistente) {
+                if (itemExistente.quantidade < 10) {
+                    itemExistente.quantidade += 1;
+                } else {
+                    alert("Você pode adicionar no máximo 10 unidades deste livro ao carrinho.");
+                }
+            } else {
+                carrinho.push({ titulo, autor, preco, quantidade: 1, imagem });
+            }
+            salvarCarrinho();
+            carregarCarrinho();
+        }
+    
+        function removerDoCarrinho(index) {
+            carrinho.splice(index, 1);
+            salvarCarrinho();
+            carregarCarrinho();
+        }
+    
+        function carregarCarrinho() {
+            const carrinhoContainer = document.getElementById('carrinho-items');
+            carrinhoContainer.innerHTML = '';
+    
+            let total = 0;
+    
+            carrinho.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.innerHTML = `
+                    <img src="${item.imagem}" alt="${item.titulo}" style="width: 50px; height: auto; margin-right: 10px;">
+                    <span>${item.titulo} - ${item.autor} - ${item.preco} </span>
+                    <div class="quantidade-container">
+                        <input type="number" class="quantidade" value="${item.quantidade}" min="1" max="10" onchange="atualizarQuantidade(${index}, this.value)">
+                        <button onclick="removerDoCarrinho(${index})">Remover Tudo</button>
+                    </div>
+                `;
+                carrinhoContainer.appendChild(itemDiv);
+    
+                total += parseFloat(item.preco.replace('R$', '').replace(',', '.')) * item.quantidade; 
+            });
+    
+            document.getElementById('total-preco').textContent = `Total: R$ ${total.toFixed(2)}`;
+        }
+    
+        function atualizarQuantidade(index, novaQuantidade) {
+            if (novaQuantidade < 1) {
+                novaQuantidade = 1;
+            } else if (novaQuantidade > 10) {
+                alert("Você pode adicionar no máximo 10 unidades deste livro ao carrinho.");
+                novaQuantidade = 10;
+            }
+            carrinho[index].quantidade = novaQuantidade;
+            salvarCarrinho();
+            carregarCarrinho();
+        }
+    
+        function salvarCarrinho() {
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        }
+    
+        function carregarCarrinhoSalvo() {
+            const carrinhoSalvo = localStorage.getItem('carrinho');
+            if (carrinhoSalvo) {
+                carrinho = JSON.parse(carrinhoSalvo);
+            }
+            carregarCarrinho();
+        }
+    
+        function limparCarrinho() {
+            if (carrinho.length > 0) {
+                carrinho = [];
+                salvarCarrinho();
+                carregarCarrinho();
+            }
+        }
+    
+        function finalizarCompra() {
+    const total = parseFloat(document.getElementById('total-preco').textContent.replace('Total: R$', '').replace(',', '.'));
+    if (total > 0) {
+        limparCarrinho();
+        window.location.href = 'confirmacao.html?Total=' + total.toFixed(2);
+    } else {
+        alert("Seu carrinho está vazio.");
+    }
+}
+
+
+    
+        function limparCarrinhoComAlerta() {
+            if (carrinho.length > 0) {
+                if (confirm("Você realmente deseja limpar o carrinho?")) {
+                    limparCarrinho();
+                }
+            } else {
+                alert("Seu carrinho já está vazio.");
+            }
+        }
+    
+        window.onload = function() {
+            limparCarrinho();
+            carregarCarrinhoSalvo();
+        };
+    </script>
+       
+</body>
+</html>

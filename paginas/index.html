@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraria Mais</title>
+    <link rel="stylesheet" href="/css/index.css"></head>
+    <link rel="icon" type="image/x-icon" href="/imagens/favicon_index.png">
+
+</head>
+<body>
+    <header>
+        <h1>Livraria Mais</h1>
+        <button class="nav-button" onclick="window.open('carrinho.html', '_blank')">Carrinho de compras</button>
+    </header>
+
+    <main>
+        <div class="livro-info">
+            <img src="https://m.media-amazon.com/images/I/51QtZ5XrmDL._SX342_SY445_.jpg" alt="Imagem de um Livro" class="livro-imagem">
+            <div class="data-hora">
+                <h1>LANÇAMENTO</h1>
+                <h2>Box Série Elementos</h2>
+                <p>Não existe nada no mundo que o amor não seja capaz de curar. E é isso que Brittainy Cherry nos mostra na série Elementos. Agora reunidos em um box com capas exclusivas, os quatro livros da série são indispensáveis para amantes de histórias inspiradoras e personagens cativantes.</p>
+                <p class="preco">Apenas R$ 119,99</p>
+                <p id="tempo-lancamento"></p>
+                <p id="data-hora"></p>
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="catalogo.html" class="link-item">Catálogo</a>
+            <a href="maisvendidos.html" class="link-item">Mais Vendidos</a>
+            <a href="recomendacoes.html" class="link-item">Recomendações</a>
+            <a href="sobrenos.html" class="link-item">Sobre Nós</a>
+            <a href="contato.html" class="link-item">Contato</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Livraria Mais. Todos os direitos reservados.</p>
+        <p>Política de Privacidade | Termos de Serviço</p>
+    </footer>
+
+    <script>
+    function atualizarhora() {
+    const now = new Date();
+    document.getElementById('data-hora').innerText = now.toLocaleString('pt-BR');
+
+    const releaseDate = new Date(2025, 0, 1, 0, 0, 0);
+    const TempoRestante = releaseDate - now;
+
+    if (TempoRestante > 0) {
+        const dias = Math.floor(TempoRestante / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((TempoRestante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((TempoRestante % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById('tempo-lancamento').innerText = `Faltam ${dias} dias, ${horas} horas e ${minutos} minutos para o lançamento!`;
+    } else {
+        document.getElementById('tempo-lancamento').innerText = 'O lançamento já passou!';
+    }
+}
+    setInterval(atualizarhora, 1000);
+    </script>
+</body>
+</html>
